@@ -4,6 +4,23 @@ var context = canvas.getContext('2d');
 var canvasWidth = canvas.width;
 var canvasHeight = canvas.height;
 
+var sizeW = 250;
+var sizeH = 50;
+
+var w = canvasWidth/2-sizeW/2;
+var h = canvasHeight/2-sizeH/2;
+
+context.fillStyle = 'red';
+context.fillRect(w,h+sizeH,sizeW,sizeH);
+
+context.fillStyle = 'white';
+context.fillRect(w,h,sizeW,sizeH);
+
+context.fillStyle = 'green';
+context.fillRect(w,h-sizeH,sizeW,sizeH);
+
+
+/*
 var size = 100;
 
 context.fillStyle = "rgba(255,0,0,.5)";
@@ -12,7 +29,7 @@ context.fillRect( (canvasWidth/2) - (size/4) - (size/2) , (canvasHeight/2) - (si
 context.fillStyle = "rgba(0,0,255,.5";
 context.fillRect( (canvasWidth/2) - (size/4) , (canvasHeight/2) - (size/4) , size , size );
 
-/*
+
 var padding = 10;
 
 context.fillStyle = 'green';
