@@ -4,6 +4,19 @@ var context = canvas.getContext('2d');
 var canvasWidth = canvas.width;
 var canvasHeight = canvas.height;
 
+let size = 150;
+let canvasWidth=canvas.width;
+let canvasHeight=canvas.height;
+context.beginPath();
+context.moveTo(canvasWidth/2-size/2,canvasHeight/2+size/2);
+context.lineTo(canvasWidth/2,canvasHeight/2-size/2);
+context.lineTo(canvasWidth/2+size/2, canvasHeight/2+size/2);
+context.lineTo(canvasWidth/2-size/2,canvasHeight/2+size/2);
+context.strokeStyle = 'rgba(128,128,128,.5)';
+context.stroke();
+context.fillStyle = 'rgba(255,165,0,.5)';
+context.fill();
+/*
 context.beginPath();
 context.moveTo(0,canvasHeight);
 context.lineTo(canvasWidth,0);
@@ -15,8 +28,6 @@ context.moveTo(0,0);
 context.lineTo(canvasWidth,canvasHeight);
 context.strokeStyle = 'red';
 context.stroke();
-
-/*
 
 var sizeW = 250;
 var sizeH = 50;
