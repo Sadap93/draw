@@ -4,6 +4,20 @@ var context = canvas.getContext('2d');
 var canvasWidth = canvas.width;
 var canvasHeight = canvas.height;
 
+context.beginPath();
+context.moveTo(0,canvasHeight);
+context.lineTo(canvasWidth,0);
+context.strokeStyle = 'red';
+context.stroke();
+
+context.beginPath();
+context.moveTo(0,0);
+context.lineTo(canvasWidth,canvasHeight);
+context.strokeStyle = 'red';
+context.stroke();
+
+/*
+
 var sizeW = 250;
 var sizeH = 50;
 
@@ -19,8 +33,6 @@ context.fillRect(w,h,sizeW,sizeH);
 context.fillStyle = 'green';
 context.fillRect(w,h-sizeH,sizeW,sizeH);
 
-
-/*
 var size = 100;
 
 context.fillStyle = "rgba(255,0,0,.5)";
