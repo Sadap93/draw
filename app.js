@@ -4,6 +4,32 @@ var context = canvas.getContext('2d');
 var canvasWidth = canvas.width;
 var canvasHeight = canvas.height;
 
+var padding = 5;
+var slide = 15;
+var size = 50;
+var positionX = canvasWidth-canvasWidth+slide;
+var positionY = canvasHeight-canvasHeight+slide;
+var number = 5;
+
+for(let j = 1; j<6; j++){
+    
+    for(let i = 0; i < number; i++){
+        
+        context.fillStyle = "rgba(255,165,0,.5)";
+        context.fillRect(positionX, positionY, size, size);
+        positionY+=padding+size;
+        
+    }
+    number = number - 1
+    positionX+=padding+size;
+    positionY = slide+(size+padding)*j;
+}
+
+/*
+---TASK: 12---
+
+---TASK: 11---
+
 var padding = 20;
 var size = 45;
 var positionX = canvasWidth-canvasWidth+padding;
@@ -15,10 +41,6 @@ for(let i = 0; i<10; i++){
     positionX+=size/2;
     positionY+=size/2;
 }
-/*
----TASK: 11---
-
-
 
 ---TASK: 10---
 context.beginPath();
