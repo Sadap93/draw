@@ -4,6 +4,28 @@ var context = canvas.getContext('2d');
 var canvasWidth = canvas.width;
 var canvasHeight = canvas.height;
 
+let size = 100;
+let space = 5;
+
+for(i=0; i<30; i++){
+    
+    let padding = 120+space*i;
+    
+    context.beginPath();
+    context.moveTo(padding,padding);
+    context.lineTo(padding+size/2,padding-size);
+    context.lineTo(padding+size,padding);
+    context.lineTo(padding,padding);
+    context.strokeStyle = "grey";
+    context.stroke();
+}
+
+
+/*
+---TASK: 14---
+
+---TASK: 13---
+
 var size = 30;
 var padding = 5;
 
@@ -23,12 +45,6 @@ for(j=0; j<6; j++){
         red-=7;
     }   
 }
-
-
-
-/*
----TASK: 13---
-
 
 ---TASK: 12---
 
