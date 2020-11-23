@@ -4,6 +4,27 @@ var context = canvas.getContext('2d');
 var canvasWidth = canvas.width;
 var canvasHeight = canvas.height;
 
+var space = 3;
+var numberOfLine = canvasWidth/space;
+
+for(i=0; i<numberOfLine; i++){
+    
+    context.beginPath();
+    context.moveTo((canvasWidth-canvasWidth)+i*space,canvasHeight/2);
+    if(i%2==1){
+        context.lineTo(canvasWidth/2,canvasHeight-canvasHeight);
+    }else if(i%2==0){
+        context.lineTo(canvasWidth/2,canvasHeight);
+    }
+    context.strokeStyle = "rgba(255,0,0,.5)";
+    context.stroke();
+}
+
+/*
+---TASK: 17---
+
+---TASK: 16---
+
 var width = 20;
 var height = 15;
 var size = 50;
@@ -24,11 +45,6 @@ for(let i = 1; i<16; i++){
     positionX+=width;
     positionY+=height;
 }
-
-
-/*
----TASK: 16---
-
 ---TASK: 15---
 
 
