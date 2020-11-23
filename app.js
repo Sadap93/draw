@@ -4,6 +4,34 @@ var context = canvas.getContext('2d');
 var canvasWidth = canvas.width;
 var canvasHeight = canvas.height;
 
+var size = 30;
+var padding = 5;
+
+var red = 255;
+var green = 79;
+var blue = 120;
+
+for(j=0; j<6; j++){
+
+    let height=50+size*j+padding*j;  
+    var width = 125;
+    blue+=15; 
+    
+    for(i=0; i<6; i++){
+        context.fillStyle = 'rgb(' + red + ',' + green + ',' + blue + ')';
+        context.fillRect(width+size*i+padding*i, height, size, size);
+        red-=7;
+    }   
+}
+
+
+
+/*
+---TASK: 13---
+
+
+---TASK: 12---
+
 var padding = 5;
 var slide = 15;
 var size = 50;
@@ -24,10 +52,6 @@ for(let j = 1; j<6; j++){
     positionX+=padding+size;
     positionY = slide+(size+padding)*j;
 }
-
-/*
----TASK: 12---
-
 ---TASK: 11---
 
 var padding = 20;
