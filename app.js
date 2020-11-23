@@ -4,6 +4,34 @@ var context = canvas.getContext('2d');
 var canvasWidth = canvas.width;
 var canvasHeight = canvas.height;
 
+var width = 20;
+var height = 15;
+var size = 50;
+var positionX = canvasWidth-canvasWidth+width;
+var positionY = canvasHeight-canvasHeight+height;
+
+for(let i = 1; i<16; i++){
+    if(i%15==0){
+        context.fillStyle = "rgba(0,255,0,.5)";
+    } else if(i%3==0){
+        context.fillStyle = "rgba(0,0,255,.5)";
+    } else if(i%5==0){
+        context.fillStyle = "rgba(255,255,0,.5)";
+    }else {
+        context.fillStyle = "rgba(0,0,0,.5)";
+    }
+    context.fillRect(positionX, positionY, size, size);
+    positionX+=width;
+    positionY+=height;
+}
+
+
+/*
+---TASK: 16---
+
+---TASK: 15---
+
+
 let padding = 10;
 let hue = 360;
 
@@ -13,10 +41,6 @@ for(i=0; i<17; i++){
     context.fillRect((canvasWidth-canvasWidth)+i*padding, (canvasHeight-canvasHeight)+i*padding, canvasWidth-i*2*padding, canvasHeight-i*2*padding);
     hue-=hue/17;
 }
-
-
-/*
----TASK: 15---
 
 ---TASK: 14---
 
