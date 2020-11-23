@@ -4,6 +4,22 @@ var context = canvas.getContext('2d');
 var canvasWidth = canvas.width;
 var canvasHeight = canvas.height;
 
+let padding = 10;
+let hue = 360;
+
+for(i=0; i<17; i++){
+    
+    context.fillStyle = "hsl("+ hue + ","+ "60%, 45%)";
+    context.fillRect((canvasWidth-canvasWidth)+i*padding, (canvasHeight-canvasHeight)+i*padding, canvasWidth-i*2*padding, canvasHeight-i*2*padding);
+    hue-=hue/17;
+}
+
+
+/*
+---TASK: 15---
+
+---TASK: 14---
+
 let size = 100;
 let space = 5;
 
@@ -19,11 +35,6 @@ for(i=0; i<30; i++){
     context.strokeStyle = "grey";
     context.stroke();
 }
-
-
-/*
----TASK: 14---
-
 ---TASK: 13---
 
 var size = 30;
