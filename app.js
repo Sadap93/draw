@@ -4,6 +4,30 @@ var context = canvas.getContext('2d');
 var canvasWidth = canvas.width;
 var canvasHeight = canvas.height;
 
+var space = 1;
+
+for(i=0; i<canvasWidth; i++){
+    context.beginPath();
+    context.moveTo((canvasWidth-canvasWidth)+i*space,(canvasHeight/2));
+    if(i%4==0){
+        context.lineTo((canvasWidth-canvasWidth),(canvasHeight-canvasHeight));
+    }else if(i%4==1){
+        context.lineTo(canvasWidth,(canvasHeight-canvasHeight));
+    }else if(i%4==2){
+        context.lineTo((canvasWidth-canvasWidth),canvasHeight);
+    }else if(i%4==3){
+        context.lineTo(canvasWidth,canvasHeight);
+    }
+    context.strokeStyle = "rgba(0,0,255,.5)";
+    context.stroke();
+}
+
+
+/*
+---TASK: 18---
+
+---TASK: 17---
+
 var space = 3;
 var numberOfLine = canvasWidth/space;
 
@@ -19,10 +43,6 @@ for(i=0; i<numberOfLine; i++){
     context.strokeStyle = "rgba(255,0,0,.5)";
     context.stroke();
 }
-
-/*
----TASK: 17---
-
 ---TASK: 16---
 
 var width = 20;
