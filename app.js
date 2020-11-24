@@ -4,6 +4,24 @@ var context = canvas.getContext('2d');
 var canvasWidth = canvas.width;
 var canvasHeight = canvas.height;
 
+function triangle(positionX, positionY, size){
+    context.beginPath();
+context.moveTo(positionX, positionY);
+context.lineTo(positionX - size/2, positionY+size);
+context.lineTo(positionX + size/2, positionY + size);
+context.lineTo(positionX, positionY);
+context.strokeStlye = 'rgba(0,0,0,.5)';
+context.stroke();
+context.fillStyle = 'rgba(255,165,0,.5)';
+context.fill();
+}triangle(230, 160, 50);
+triangle(270, 100, 50);
+triangle(200, 50, 150);
+
+/*
+---TASK: 19---
+---TASK: 18---
+
 var space = 1;
 
 for(i=0; i<canvasWidth; i++){
@@ -21,11 +39,6 @@ for(i=0; i<canvasWidth; i++){
     context.strokeStyle = "rgba(0,0,255,.5)";
     context.stroke();
 }
-
-
-/*
----TASK: 18---
-
 ---TASK: 17---
 
 var space = 3;
