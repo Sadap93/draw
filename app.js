@@ -4,32 +4,65 @@ var context = canvas.getContext('2d');
 var canvasWidth = canvas.width;
 var canvasHeight = canvas.height;
 
-function drawCheckeredPattern(row, col) {
-    for (j = 0; j < row; j++) {
-        var positionX = canvasWidth - canvasWidth;
-        var positionY = canvasHeight - canvasHeight;
-        for (i = 0; i < col; i++) {
-            if (j % 2 == 1) {
-                if (i % 2 == 1) {
-                    context.fillStyle = 'black';
-                } else {
-                    context.fillStyle = 'white';
-                }
+var canvas = document.getElementById('myCanvas');
+var context = canvas.getContext('2d');
+
+var base = 100;
+var altitude = 86.6;
+
+function drawTriangle(positionX, positionY) {
+    for (var rowCounter = 0; rowCounter < 3; rowCounter++) {
+        for (var triangleCounter = 0; triangleCounter <= rowCounter; triangleCounter++) {
+            context.beginPath();
+            context.moveTo(positionX - rowCounter * base / 2 + triangleCounter * base, positionY + rowCounter * altitude);
+            context.lineTo(positionX - (rowCounter + 1) * base / 2 + triangleCounter * base, positionY + (rowCounter + 1) * altitude);
+            context.lineTo(positionX - (rowCounter - 1) * base / 2 + triangleCounter * base, positionY + (rowCounter + 1) * altitude);
+            context.lineTo(positionX - rowCounter * base / 2 + triangleCounter * base, positionY + rowCounter * altitude);
+            if (rowCounter === 0) {
+                context.strokeStyle = 'rgb(227,98,102)';
+                context.fillStyle = 'rgb(227,98,102)';
+            } else if (rowCounter === 1) {
+                context.strokeStyle = 'rgb(38,172,73)';
+                context.fillStyle = 'rgb(38,172,73)';
+            } else {
+                context.strokeStyle = 'rgb(34,128,128)';
+                context.fillStyle = 'rgb(34,128,128)';
             }
-            if (j % 2 == 0) {
-                if (i % 2 == 1) {
-                    context.fillStyle = 'white';
-                } else {
-                    context.fillStyle = 'black';
-                }
-            }
-            context.fillRect(positionX + (canvasWidth / row) * i, positionY + canvasHeight / col * j, canvasWidth / row, canvasHeight / col);
+            context.stroke();
+            context.fill();
         }
     }
-} drawCheckeredPattern(8, 8);
+}
+
+drawTriangle(225, 33);
 
 /*
+---TASK: 24---
+
 ---TASK: 23---
+        function drawCheckeredPattern(row, col) {
+            for (j = 0; j < row; j++) {
+                var positionX = canvasWidth - canvasWidth;
+                var positionY = canvasHeight - canvasHeight;
+                for (i = 0; i < col; i++) {
+                    if (j % 2 == 1) {
+                        if (i % 2 == 1) {
+                            context.fillStyle = 'black';
+                        } else {
+                            context.fillStyle = 'white';
+                        }
+                    }
+                    if (j % 2 == 0) {
+                        if (i % 2 == 1) {
+                            context.fillStyle = 'white';
+                        } else {
+                            context.fillStyle = 'black';
+                        }
+                    }
+                    context.fillRect(positionX + (canvasWidth / row) * i, positionY + canvasHeight / col * j, canvasWidth / row, canvasHeight / col);
+                }
+            }
+        } drawCheckeredPattern(8, 8);
 
 ---TASK: 22---
 var height = 98;
@@ -45,6 +78,7 @@ function drawHexagon(positionX, positionY){
     context.lineTo(positionX+width/4, positionY+height/2);
     context.lineTo(positionX, positionY);
     context.strokeStyle = 'rgba(230, 126, 34, 1)';
+    context.stroke();    context.strokeStyle = 'rgba(230, 126, 34, 1)';
     context.stroke();
 }
 drawHexagon(76, 120);
