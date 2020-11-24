@@ -1,35 +1,52 @@
 var canvas = document.getElementById('myCanvas');
 var context = canvas.getContext('2d');
 
-function star(positionX, positionY, size) {
-    context.beginPath();
-    context.moveTo(positionX, positionY);
-    context.lineTo(positionX + size, positionY);
-    context.lineTo(positionX + size * 0.15, positionY + size * 0.5);
-    context.lineTo(positionX + size * 0.5, positionY - size * 0.4);
-    context.lineTo(positionX + size * 0.85, positionY + size * 0.5);
-    context.lineTo(positionX, positionY);
-    context.strokeStyle = 'rgb(233,159,184)';
-    context.stroke();
-    context.fillStyle = 'rgb(233,159,184)';
-    context.fill();
+var canvasWidth = canvas.width;
+var canvasHeight = canvas.height;
+
+function random(max, min) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
-star(40, 50, 75);
-star(130, 120, 100);
-star(250, 220, 150);
-/* context.lineTo(positionX+size/3,positionY);
-context.lineTo(positionX + size/2, positionY-size*0.4);
-context.lineTo(positionX+2*(size/3),positionY);
-context.lineTo(positionX + size, positionY);
-context.lineTo(positionX+(size/3)*2,positionY+size/5);
-context.lineTo(positionX+size*0.85, positionY+size*0.5);
-context.lineTo(positionX+size/2, positionY+size/4);
-context.lineTo(positionX+size*0.15, positionY+size/2);
-context.lineTo(positionX+size/3, positionY+size/5); */
-
+function lineToCenter(positionX, positionY, color){
+    context.beginPath();
+    context.moveTo(positionX,positionY);
+    context.lineTo(canvasWidth/2,canvasHeight/2);
+    context.strokeStyle = color
+    context.stroke();
+}
+for(let i=0;i<1000;i++){
+lineToCenter(random(canvasWidth,canvasWidth-canvasWidth),random(canvasHeight,canvasHeight-canvasHeight),'teal');
+}
 /*
+---TASK: 21---
+
 ---TASK: 20---
+        function star(positionX, positionY, size) {
+            context.beginPath();
+            context.moveTo(positionX, positionY);
+            context.lineTo(positionX + size, positionY);
+            context.lineTo(positionX + size * 0.15, positionY + size * 0.5);
+            context.lineTo(positionX + size * 0.5, positionY - size * 0.4);
+            context.lineTo(positionX + size * 0.85, positionY + size * 0.5);
+            context.lineTo(positionX, positionY);
+            context.strokeStyle = 'rgb(233,159,184)';
+            context.stroke();
+            context.fillStyle = 'rgb(233,159,184)';
+            context.fill();
+        }
+        
+        star(40, 50, 75);
+        star(130, 120, 100);
+        star(250, 220, 150);
+       //context.lineTo(positionX+size/3,positionY);
+       // context.lineTo(positionX + size/2, positionY-size*0.4);
+       // context.lineTo(positionX+2*(size/3),positionY);
+       // context.lineTo(positionX + size, positionY);
+       // context.lineTo(positionX+(size/3)*2,positionY+size/5);
+       // context.lineTo(positionX+size*0.85, positionY+size*0.5);
+       // context.lineTo(positionX+size/2, positionY+size/4);
+       // context.lineTo(positionX+size*0.15, positionY+size/2);
+       // context.lineTo(positionX+size/3, positionY+size/5);
 ---TASK: 19---
 function triangle(positionX, positionY, size){
     context.beginPath();
