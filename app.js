@@ -4,6 +4,34 @@ var context = canvas.getContext('2d');
 var canvasWidth = canvas.width;
 var canvasHeight = canvas.height;
 
+function drawCheckeredPattern(row, col) {
+    for (j = 0; j < row; j++) {
+        var positionX = canvasWidth - canvasWidth;
+        var positionY = canvasHeight - canvasHeight;
+        for (i = 0; i < col; i++) {
+            if (j % 2 == 1) {
+                if (i % 2 == 1) {
+                    context.fillStyle = 'black';
+                } else {
+                    context.fillStyle = 'white';
+                }
+            }
+            if (j % 2 == 0) {
+                if (i % 2 == 1) {
+                    context.fillStyle = 'white';
+                } else {
+                    context.fillStyle = 'black';
+                }
+            }
+            context.fillRect(positionX + (canvasWidth / row) * i, positionY + canvasHeight / col * j, canvasWidth / row, canvasHeight / col);
+        }
+    }
+} drawCheckeredPattern(8, 8);
+
+/*
+---TASK: 23---
+
+---TASK: 22---
 var height = 98;
 var width = 113;
 
@@ -28,9 +56,6 @@ drawHexagon(261, 120);
 drawHexagon(261, 230);
 context.fillStyle = 'rgba(230, 126, 34, 1)';
 context.fill();
-
-/*
----TASK: 22---
 
 ---TASK: 21---
         function random(max, min) {
