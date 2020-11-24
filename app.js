@@ -4,21 +4,48 @@ var context = canvas.getContext('2d');
 var canvasWidth = canvas.width;
 var canvasHeight = canvas.height;
 
-function random(max, min) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
-function lineToCenter(positionX, positionY, color){
+var height = 98;
+var width = 113;
+
+function drawHexagon(positionX, positionY){
     context.beginPath();
-    context.moveTo(positionX,positionY);
-    context.lineTo(canvasWidth/2,canvasHeight/2);
-    context.strokeStyle = color
+    context.moveTo(positionX, positionY);
+    context.lineTo(positionX+width/4, positionY-height/2);
+    context.lineTo(positionX+(width/4)*3, positionY-height/2);
+    context.lineTo(positionX+width, positionY);
+    context.lineTo(positionX+(width/4)*3, positionY+height/2);
+    context.lineTo(positionX+width/4, positionY+height/2);
+    context.lineTo(positionX, positionY);
+    context.strokeStyle = 'rgba(230, 126, 34, 1)';
     context.stroke();
 }
-for(let i=0;i<1000;i++){
-lineToCenter(random(canvasWidth,canvasWidth-canvasWidth),random(canvasHeight,canvasHeight-canvasHeight),'teal');
-}
+drawHexagon(76, 120);
+drawHexagon(76, 230);
+drawHexagon(168.5, 65);
+drawHexagon(168.5, 175);
+drawHexagon(168.5, 285);
+drawHexagon(261, 120);
+drawHexagon(261, 230);
+context.fillStyle = 'rgba(230, 126, 34, 1)';
+context.fill();
+
 /*
+---TASK: 22---
+
 ---TASK: 21---
+        function random(max, min) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        function lineToCenter(positionX, positionY, color){
+            context.beginPath();
+            context.moveTo(positionX,positionY);
+            context.lineTo(canvasWidth/2,canvasHeight/2);
+            context.strokeStyle = color
+            context.stroke();
+        }
+        for(let i=0;i<1000;i++){
+        lineToCenter(random(canvasWidth,canvasWidth-canvasWidth),random(canvasHeight,canvasHeight-canvasHeight),'teal');
+        }
 
 ---TASK: 20---
         function star(positionX, positionY, size) {
@@ -34,7 +61,7 @@ lineToCenter(random(canvasWidth,canvasWidth-canvasWidth),random(canvasHeight,can
             context.fillStyle = 'rgb(233,159,184)';
             context.fill();
         }
-        
+
         star(40, 50, 75);
         star(130, 120, 100);
         star(250, 220, 150);
@@ -87,7 +114,7 @@ var space = 3;
 var numberOfLine = canvasWidth/space;
 
 for(i=0; i<numberOfLine; i++){
-    
+
     context.beginPath();
     context.moveTo((canvasWidth-canvasWidth)+i*space,canvasHeight/2);
     if(i%2==1){
@@ -127,7 +154,7 @@ let padding = 10;
 let hue = 360;
 
 for(i=0; i<17; i++){
-    
+
     context.fillStyle = "hsl("+ hue + ","+ "60%, 45%)";
     context.fillRect((canvasWidth-canvasWidth)+i*padding, (canvasHeight-canvasHeight)+i*padding, canvasWidth-i*2*padding, canvasHeight-i*2*padding);
     hue-=hue/17;
@@ -139,9 +166,9 @@ let size = 100;
 let space = 5;
 
 for(i=0; i<30; i++){
-    
+
     let padding = 120+space*i;
-    
+
     context.beginPath();
     context.moveTo(padding,padding);
     context.lineTo(padding+size/2,padding-size);
@@ -161,15 +188,15 @@ var blue = 120;
 
 for(j=0; j<6; j++){
 
-    let height=50+size*j+padding*j;  
+    let height=50+size*j+padding*j;
     var width = 125;
-    blue+=15; 
-    
+    blue+=15;
+
     for(i=0; i<6; i++){
         context.fillStyle = 'rgb(' + red + ',' + green + ',' + blue + ')';
         context.fillRect(width+size*i+padding*i, height, size, size);
         red-=7;
-    }   
+    }
 }
 
 ---TASK: 12---
@@ -182,13 +209,13 @@ var positionY = canvasHeight-canvasHeight+slide;
 var number = 5;
 
 for(let j = 1; j<6; j++){
-    
+
     for(let i = 0; i < number; i++){
-        
+
         context.fillStyle = "rgba(255,165,0,.5)";
         context.fillRect(positionX, positionY, size, size);
         positionY+=padding+size;
-        
+
     }
     number = number - 1
     positionX+=padding+size;
